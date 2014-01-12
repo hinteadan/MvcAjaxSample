@@ -9,17 +9,25 @@
         new model.Employee(5, "Awesome Employee 5")
     ];
 
+    $('#sendEmployee').click(function () {
+        ajax.processEmployee(employees[0]);
+    });
+
     $('#sendArrayButton').click(function () {
-        ajax.sendArray(employees);
+        var employeeDtoArray = [];
+        for (var index in employees) {
+            employeeDtoArray.push(employees[index].toDto());
+        }
+        ajax.sendArray(employeeDtoArray);
     });
 
     $('#sendCommandButton').click(function () {
         var command = new model.Crud();
-        command.add(employees[0]);
-        command.add(employees[1]);
-        command.remove(employees[2]);
-        command.remove(employees[3]);
-        command.update(employees[4]);
+        command.add(employees[0].toDto());
+        command.add(employees[1].toDto());
+        command.remove(employees[2].toDto());
+        command.remove(employees[3].toDto());
+        command.update(employees[4].toDto());
         ajax.sendCommand(command);
     });
 

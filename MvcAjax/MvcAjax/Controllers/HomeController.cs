@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using MvcAjax.Models;
 
 namespace MvcAjax.Controllers
@@ -15,6 +11,12 @@ namespace MvcAjax.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public JsonResult ProcessEmployee(Employee employee)
+        {
+            return Json(new { isSuccess = true, mvcManagedToBindThis = employee });
         }
 
         [HttpPost]
