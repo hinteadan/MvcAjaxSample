@@ -57,7 +57,7 @@
         }
 
         this.processEmployee = function (employee, successCallback) {
-            doPost(processEmployeeEndpoint, employee.toDto(), successCallback || console.log);
+            doPost(processEmployeeEndpoint, employee, successCallback || console.log);
         };
         this.sendArray = function (arr, successCallback) {
             doPost(mapArrayEndPoint, arr, successCallback || console.log);

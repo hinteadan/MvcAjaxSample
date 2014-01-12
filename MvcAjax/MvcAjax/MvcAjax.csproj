@@ -115,6 +115,7 @@
     <None Include="Scripts\_references.js" />
     <Content Include="Scripts\json2.js" />
     <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\logger.js" />
     <Content Include="Scripts\wireup.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
